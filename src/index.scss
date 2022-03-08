@@ -1,0 +1,29 @@
+
+// variables
+
+:root {
+    --primary-color: rgb(194, 194, 241);
+    --background-color:#f3f5f7;
+    --filter-table:orange;
+    --dark-bluesh:rgb(208, 224, 243);
+    --very-dark-greyish:rgb(65, 64, 64);
+}
+
+html {
+    box-sizing: border-box;
+  
+}
+
+body {
+    background-color:var(--background-color);
+    box-sizing: border-box;
+    font-size:20px;
+    margin:0;
+    padding:0;
+}
+
+.header {
+    background-color: var(--dark-bluesh);
+    height:90px;
+    
+}
