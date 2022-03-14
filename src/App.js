@@ -1,6 +1,8 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import JobSearch from "./containers/job-search/Jobsearch";
+import SearchBar from "./components/SearchBar";
+import Data from './assets/data.json'
+
 
 
 
@@ -9,7 +11,7 @@ function App() {
     <div className="App">
       
      <Header />
-     <JobSearch />
+    <SearchBar placeholder="Search a job" data={Data}/>
      <Footer />
     </div>
   );
