@@ -35,8 +35,9 @@ label {
 }
 
 .jobsearch {
- padding:20px;
-    
+    padding:20px;
+    display:flex;
+    flex-direction: row;
 }
 
 input {
@@ -56,7 +57,7 @@ input {
     height:100vh;
     justify-content:center;
     align-items:center;
-    
+    align-content:center;
     width:100%;
 }
 
@@ -112,4 +113,9 @@ a:hover {
 
     background-color:rgb(240, 238, 238);
     cursor:pointer;
+}
+
+.bouton {
+    display:flex;
+    justify-content:center;
 }
