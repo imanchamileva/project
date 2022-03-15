@@ -11,6 +11,7 @@ function SearchBar({placeholder, data}) {
     const [filteredDataLocation, setFilteredDataLocation] = useState ([])
 
 
+    // jobsearch input
     const handleFilter = (e) => {
         // le mot qu'on rentre dans input= searchWord
         const searchWord = e.target.value
@@ -29,6 +30,7 @@ function SearchBar({placeholder, data}) {
         
     }
 
+    //location input
     const handleLocation = (e) => {
         // le mot qu'on rentre dans input= searchWord
         const searchWord = e.target.value
@@ -55,6 +57,7 @@ function SearchBar({placeholder, data}) {
 
         <div className="divGenerale">
 
+    <div className="divInputs">
             <div className="jobsearch">
                 <input placeholder={placeholder} onChange={handleFilter}/>
                 
@@ -88,10 +91,11 @@ function SearchBar({placeholder, data}) {
                 <input placeholder="Location"   onChange={handleLocation}></input>
             </div>
 
-            <div className="bouton">
-                <button >Search</button> 
+         </div>
+
+            <div className="button">
+                <button className="bouton">Search</button> 
             </div>
-           
         </div>
        
     )
