@@ -9,9 +9,14 @@ function SearchBar({placeholder, data}) {
 
     const [filteredData, setFilteredData] = useState ([])
     const [filteredDataLocation, setFilteredDataLocation] = useState ([])
-  
-    
+    const [text, setText] = useState('')
 
+    const onSuggestedHandler =(text) => {
+
+        setText(text)
+        setFilteredData([])
+    }
+    
 
     // jobsearch input
     const handleFilter = (e) => {
@@ -53,7 +58,7 @@ function SearchBar({placeholder, data}) {
 
 
 
-    
+  
 
     return(
 
@@ -61,16 +66,23 @@ function SearchBar({placeholder, data}) {
 
     <div className="divInputs">
             <div className="jobsearch">
-                <input placeholder={placeholder} onChange={handleFilter} />
+                <input 
+              
+                placeholder={placeholder} 
+                onChange={handleFilter} 
+                value={text}
+              
+                />
                 
                 {/* if array not empty, show the following */}
-                {filteredData.length !== 0 && (
+                {filteredData.length !== 0 &&  (
                <div className="dataResult">
                    {filteredData.slice(0,15).map((value,key) => {
                        return (
-                            <a href target="_blank" className="dataItem">
-                            <p >{value.position} </p>
-                             </a>
+                            <a href  className="dataItem">   
+                           
+                            <p onClick={() =>onSuggestedHandler(value.position)} >{value.position} </p>
+                            </a>
                        )
                    })}
                </div>)
