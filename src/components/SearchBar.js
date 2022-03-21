@@ -80,7 +80,7 @@ function SearchBar({placeholder, data}) {
                     {/* if array not empty, show the following */}
                     {filteredData.length !== 0 &&  (
                         
-                <div className="dataResult">
+                    <div className="dataResult">
                     {filteredData.slice(0,15).map((value,key) => {
                         return (
                             <div key={key}>
