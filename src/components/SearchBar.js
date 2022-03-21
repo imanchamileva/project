@@ -1,6 +1,6 @@
 import React from 'react'
 import {useState} from "react"
-
+import Data from '../assets/data.json'
 
 
 
@@ -10,13 +10,15 @@ function SearchBar({placeholder, data}) {
     const [filteredData, setFilteredData] = useState ([])
     const [filteredDataLocation, setFilteredDataLocation] = useState ([])
     const [text, setText] = useState('')
+    const [suggestions, setSuggestions] = useState([])
+   
 
-    const onSuggestedHandler =(text) => {
-
-        setText(text)
-        setFilteredData([])
-    }
+   const itemClickHandler = (value) => {
+    setText(value)
+    setSuggestions([])
+   }
     
+  
 
     // jobsearch input
     const handleFilter = (e) => {
@@ -64,30 +66,34 @@ function SearchBar({placeholder, data}) {
 
         <div className="divGenerale">
 
-    <div className="divInputs">
-            <div className="jobsearch">
-                <input 
-              
-                placeholder={placeholder} 
-                onChange={handleFilter} 
-                value={text}
-              
-                />
+            <div className="divInputs">
+                <div className="jobsearch">
+                    <input 
                 
-                {/* if array not empty, show the following */}
-                {filteredData.length !== 0 &&  (
-               <div className="dataResult">
-                   {filteredData.slice(0,15).map((value,key) => {
-                       return (
-                            <a href  className="dataItem">   
-                           
-                            <p onClick={() =>onSuggestedHandler(value.position)} >{value.position} </p>
-                            </a>
-                       )
-                   })}
-               </div>)
-                    }
-                </div>      
+                    placeholder={placeholder} 
+                    onChange={handleFilter} 
+                    value={text}
+                    
+
+                    />
+                    
+                    {/* if array not empty, show the following */}
+                    {filteredData.length !== 0 &&  (
+                        
+                <div className="dataResult">
+                    {filteredData.slice(0,15).map((value,key) => {
+                        return (
+                            <div key={key}>
+                                <a onClick={() =>itemClickHandler(value.position)}  href  className="dataItem">   
+                            
+                                {value.position}
+                                </a>
+                                </div>
+                        )
+                    })}
+                </div>)
+                        }
+                    </div>      
 
 
 
@@ -97,7 +103,7 @@ function SearchBar({placeholder, data}) {
                <div className="dataResult">
                    {filteredDataLocation.slice(0,15).map((value,key) => {
                        return (
-                            <a href  target="_blank" className="dataItem">
+                            <a  href  target="_blank" className="dataItem">
                             <p> {value.location}</p>
                            </a>
                        )
@@ -122,6 +128,6 @@ function SearchBar({placeholder, data}) {
 
 
 
-export default SearchBar
+// export default SearchBar
 
 
