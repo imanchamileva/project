@@ -19,7 +19,7 @@ function SearchItem() {
 
     const onSearch = (searchJob) => {
         setText(searchJob)
-        console.log('search', searchJob);
+      
 
     }
 
@@ -38,13 +38,13 @@ function SearchItem() {
         />
 
         <button className="buttonSearch" onClick={() => onSearch(text)}>Search Your Dream Job or Your Worst Nightmare</button>
-        <div className="dataResult">
+        <div >
             {data.filter(value =>{
                 const searchTerm = text.toLowerCase()
                 const position= value.position.toLowerCase()
 
-                return searchTerm && position.includes(searchTerm) && position !== searchTerm
-            }).slice(0, 10)
+                return searchTerm && position.includes(searchTerm) && position !== searchTerm})
+            .slice(0, 10)
             .map((value,key) => (
                 <p 
                 key={key} 

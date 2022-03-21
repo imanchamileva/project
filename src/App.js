@@ -14,6 +14,7 @@ function App() {
       
      {/* <Header /> */}
      <SearchItem  data={Data}/>
+     <SearchItem  data={Data}/>
      {/* <SearchBar placeholder="Job search" data={Data}/> */}
     
      <Footer />
