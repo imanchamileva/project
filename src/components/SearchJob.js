@@ -12,6 +12,7 @@ function SearchJob() {
     const [text, setText] = useState('')
     const [proposition, setProposition] = useState('')
     const [filteredData, setFilteredData] = useState([])
+    const [showResult, setShowResults] = useState('')
 
 
    
@@ -25,7 +26,14 @@ function SearchJob() {
 
     const onSearch = (searchJob) => {
         setText(searchJob)
-      
+    
+    }
+
+    const onClickButton =() => {
+
+        setShowResults(
+            <div className="resultPage">HEY</div>
+            )
 
     }
 
@@ -39,29 +47,30 @@ const handleLocation = (e) => {
 const onLocationSearch = (searchLocation) => {
     setProposition(searchLocation)
   
-}
+ }
 
   return (
 
 
-<div className="divGenerale">
-    <div className="divVerticales">
-        <div className="premiereColonne">
+ <div className="divGenerale">
+    <div className="divsEtBouton">
+        <div className="divVerticales">
+            <div className="premiereColonne">
 
-            <input
+                <input
 
-            placeholder="Job"
-            className="inputName" type="text" 
-            onChange={handleFilter}
-            value={text}
-            
-            />
+                placeholder="Job"
+                className="inputName" type="text" 
+                onChange={handleFilter}
+                value={text}
+                
+                />
 
         
-        {filteredData.length !== 0 && (
-
+        
+        {filteredData !== 0 && (
             <div className="dataResult">
-                {filteredData.filter(value =>{
+                {data.filter(value =>{
 
                     const searchTerm = text.toLowerCase()
                     const position= value.position.toLowerCase()
@@ -80,9 +89,9 @@ const onLocationSearch = (searchLocation) => {
                     </a>
                 ))}
             </div>
-        )}
-    </div>
-                
+          )}
+        </div>
+       
                    
             {/* //location */}
 
@@ -122,11 +131,19 @@ const onLocationSearch = (searchLocation) => {
             </div>
 
             </div>
+
             <div className="classButton">
-                <button className="buttonSearch" onClick={() => onSearch(text)}>Search Your Dream Job or Your Worst Nightmare ♥</button>
+               
+                <button className="buttonSearch" onClick={() => onClickButton()}>Search Your Dream Job or Your Worst Nightmare ♥</button>
+                
             </div>
 
-   
+
+            <div className="resultPage">
+                {showResult}
+            </div>
+    </div>
+
 
 </div>
 
