@@ -110,7 +110,9 @@ function SearchBar({placeholder, data}) {
                    })}
                </div>)
                     }
-                <input placeholder="Location"   onChange={handleLocation}></input>
+                <input placeholder="Location"
+                className="bg-red"
+                onChange={handleLocation}></input>
             </div>
 
          </div>
