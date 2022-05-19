@@ -83,7 +83,7 @@ function SearchJob() {
 
                                     <a href
 
-                                        className="dataItem"
+                                        className="dataItem cursor-pointer width-100% height-50px flex align-items-center text-color-black bg-white w-72 py-2 hover:bg-gray-50"
                                         key={key}
                                         onClick={() => onSearch(value.position)}>
                                         <p>{value.position}</p>
@@ -97,7 +97,7 @@ function SearchJob() {
 
                 {/* //location */}
 
-                <div className="">
+                <div className="static">
 
                     <input
 
@@ -121,7 +121,7 @@ function SearchJob() {
                             .map((value, key) => (
 
                                 <a href
-                                    className="dataItem"
+                                    className="dataItem cursor-pointer width-100% height-50px flex align-items-center text-color-black bg-white w-72 py-2 hover:bg-gray-50"
                                     key={key}
                                     onClick={() => onLocationSearch(value.location)}>
                                     <p>

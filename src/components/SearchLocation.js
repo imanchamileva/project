@@ -3,10 +3,6 @@ import {useState} from "react"
 var data = require('../assets/data.json')
 
 
-
-
-
-
 function SearchLocation() {
 
     const [jobs, setJobs] = useState ([])
