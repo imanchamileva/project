@@ -15,7 +15,7 @@ function SearchJob() {
     const [showResult, setShowResults] = useState('')
     const navigate = useNavigate();
 
-    
+
 
     //position
 
@@ -53,14 +53,14 @@ function SearchJob() {
 
 
 
-        <div className="w-full h-screen flex flex-col flex content-center flex items-center bg-green-100">
-            <div className="w-2/4 h-screen flex justify-between flex items-center flex content-center flex">
+        <div className="w-full h-screen flex flex-col  content-center  items-center bg-green-100">
+            <div className="w-2/4 h-screen flex justify-between  items-center  content-center ">
                 <div className="">
 
                     <input
 
                         placeholder="Job"
-                        className="w-72 h-12 border-1 shadow-lg rounded"
+                        className="w-72 h-12 border-1 shadow-lg rounded top-0"
                         type="text"
                         onChange={handleFilter}
                         value={text}
@@ -70,7 +70,7 @@ function SearchJob() {
 
 
                     {filteredData !== 0 && (
-                        <div className="dataResult">
+                        <div className="dataResult absolute">
                             {data.filter(value => {
 
                                 const searchTerm = text.toLowerCase()
@@ -81,14 +81,13 @@ function SearchJob() {
                                 .slice(0, 10)
                                 .map((value, key) => (
 
-                                    <a href
+                                        <a href
+                                            className="dataItem cursor-pointer width-100% height-50px flex align-items-center text-color-black bg-white w-72 py-2 hover:bg-gray-50"
+                                            key={key}
+                                            onClick={() => onSearch(value.position)}>
+                                            <p>{value.position}</p>
+                                        </a>
 
-                                        className="dataItem cursor-pointer width-100% height-50px flex align-items-center text-color-black bg-white w-72 py-2 hover:bg-gray-50"
-                                        key={key}
-                                        onClick={() => onSearch(value.position)}>
-                                        <p>{value.position}</p>
-
-                                    </a>
                                 ))}
                         </div>
                     )}
@@ -109,7 +108,7 @@ function SearchJob() {
 
                     />
 
-                    <div className="dataResult">
+                    <div className="dataResult absolute">
 
                         {data.filter(value => {
                             const searchTerm = proposition.toLowerCase()
