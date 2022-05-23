@@ -72,7 +72,7 @@ const JobOffers = () => {
             "logo": "./images/loop-studios.svg",
             "new": false,
             "featured": false,
-            "position": "Software Engineer",
+            "position": "Back-end developer",
             "role": "FullStack",
             "level": "Midweight",
             "postedAt": "1w ago",
@@ -156,10 +156,9 @@ const JobOffers = () => {
             "languages": ["JavaScript"],
             "tools": ["React", "Sass"]
         }
-
     ])
     return (
-        <Jobs datas={datas}/>
+        <Jobs datas={datas} />
     )
 }
 

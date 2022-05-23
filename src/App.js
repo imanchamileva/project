@@ -16,9 +16,9 @@ function App() {
 
       <Router>
         <nav className="w-full h-20 flex justify-end items-center mx-auto">
-          <Link className="pr-12" to="/">Home</Link>
-          <Link className="pr-12" to="/about">About</Link>
-          <Link className="pr-12" to="login">Login</Link>
+          <Link className="pr-12 text-pink-700 text-lg" to="/">Home</Link>
+          <Link className="pr-12 text-pink-700 text-lg" to="/about">About</Link>
+          <Link className="pr-12 text-pink-700 text-lg" to="login">Login</Link>
         </nav>
         <Routes>
           <Route path="/" element={<SearchJob />} />

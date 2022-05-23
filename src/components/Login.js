@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Login = () => {
 
     const notify = () => {
-        toast("Wow so easy!")
+        toast.success("You are successfully logged in, Iman!")
     }
 
     return (
-        <div className="h-screen flex py-14 items-start mt-20 justify-center">
-            <div className="flex flex-row justify-center items-center">
+        <div className="h-screen flex py-14 items-center  justify-center bg-lime-100">
+            <div className="flex flex-row justify-center items-center ">
                 <div className="p-6 rounded-lg shadow-lg bg-white max-w-sm flex flex-col items-center">
                     <form>
                         <div className="form-group mb-6">
@@ -64,9 +64,8 @@ const Login = () => {
                                 className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Forgot
                                 password?</a>
                         </div>
-                        <button className="bg-red-500" onClick={notify}>hehe</button>
-                        <Link to="/">
-                            <button type="submit" className="
+                            <Link to="/" onClick={notify}>
+                                <button type="submit" className="
       w-full
       px-6
       py-2.5
@@ -84,8 +83,8 @@ const Login = () => {
       transition
       duration-150
       ease-in-out">Sign in
-                            </button>
-                        </Link>
+                                </button>
+                            </Link>
                         <p className="text-gray-800 mt-6 text-center">Not a member? <a href="#!"
                             className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Register</a>
                         </p>

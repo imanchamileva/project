@@ -92,15 +92,15 @@ const Jobs = (props) => {
 
   return (
 
-    <div className="flex flex-row pt-12">
-      <div className="overflow-y-auto h-screen ml-48 mr-48 w-1/3">
-        <div className="border-2 h-18 w-80 p-4">
+    <div className="flex flex-row pt-12 bg-lime-100">
+      <div className="overflow-y-auto h-screen ml-48 mr-48 w-1/3 bg-white">
+        <div className="border-2 h-18 p-4">
           {infos.slice(0, 1).map((info, i) => (
             <div key={i}>
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick1} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick1} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
@@ -110,7 +110,7 @@ const Jobs = (props) => {
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick2} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick2} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
@@ -120,7 +120,7 @@ const Jobs = (props) => {
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick3} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick3} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
@@ -131,7 +131,7 @@ const Jobs = (props) => {
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick4} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick4} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
@@ -142,7 +142,7 @@ const Jobs = (props) => {
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick5} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick5} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
@@ -153,7 +153,7 @@ const Jobs = (props) => {
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick6} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick6} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
@@ -164,22 +164,22 @@ const Jobs = (props) => {
               <p className="text-bold">{info.position}</p>
               <p>{info.company}</p>
               <p>{info.location}</p>
-              <button onClick={handleClick7} className="bg-green-200 rounded">See more</button>
+              <button onClick={handleClick7} className="bg-pink-400 text-white w-20 rounded">See more</button>
             </div>
           ))}
         </div>
       </div>
-      {showInfos1 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	"> <JobInfos /></div> : ''}
+      {showInfos1 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen bg-white"> <JobInfos /></div> : ''}
 
-      {showInfos2 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	"> <JobInfos2 /></div> : ''}
+      {showInfos2 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen bg-white	"> <JobInfos2 /></div> : ''}
 
-      {showInfos3 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	"> <JobInfos3 /></div> : ''}
+      {showInfos3 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	bg-white"> <JobInfos3 /></div> : ''}
 
-      {showInfos4 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	"> <JobInfos4 /></div> : ''}
+      {showInfos4 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	bg-white"> <JobInfos4 /></div> : ''}
 
-      {showInfos5 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	"> <JobInfos5 /></div> : ''}
+      {showInfos5 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screenbg-white	"> <JobInfos5 /></div> : ''}
 
-      {showInfos6 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screen	"> <JobInfos6 /></div> : ''}
+      {showInfos6 ? <div className="flex justify-end  p-4 mr-48 border-2 pt-4 w-2/3 overflow-y-auto h-screenbg-white	"> <JobInfos6 /></div> : ''}
 
     </div>
 

@@ -53,7 +53,7 @@ function SearchJob() {
 
 
 
-        <div className="w-full h-screen flex flex-col  content-center  items-center bg-green-100">
+        <div className="w-full h-screen flex flex-col  content-center  items-center bg-lime-100">
             <div className="w-2/4 h-screen flex justify-between  items-center  content-center ">
                 <div className="">
 
@@ -136,7 +136,7 @@ function SearchJob() {
             </div>
 
             <div className="w-full h-screen flex justify-center">
-                <button className="h-12 bg-green-400 rounded hover:bg-green-300" onClick={() => onClickButton()}>Find Your Dream Job or Your Worst Nightmare ♥</button>
+                <button className="h-12 bg-pink-400 rounded hover:bg-pink-500 text-white" onClick={() => onClickButton()}>Find Your Dream Job or Your Worst Nightmare ♥</button>
             </div>
 
 
