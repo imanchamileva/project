@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import Jobs from './components/Jobs';
 import Login from './components/Login';
 import About from './components/About';
+import JobOffers from "./components/JobOffers";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
         </nav>
         <Routes>
           <Route path="/" element={<SearchJob />} />
-          <Route path="/jobs" element={<Jobs />} />
+          <Route path="/jobs" element={<JobOffers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
         </Routes>

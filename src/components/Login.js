@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Login = () => {
 
+    const notify = () => {
+        toast("Wow so easy!")
+    }
 
     return (
-        <div className="h-screen flex py-14 items-start justify-center">
+        <div className="h-screen flex py-14 items-start mt-20 justify-center">
             <div className="flex flex-row justify-center items-center">
                 <div className="p-6 rounded-lg shadow-lg bg-white max-w-sm flex flex-col items-center">
                     <form>
@@ -55,15 +61,16 @@ const Login = () => {
                                 <label className="form-check-label inline-block text-gray-800" htmlFor="exampleCheck2">Remember me</label>
                             </div>
                             <a href="#!"
-                                className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Forgot
+                                className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Forgot
                                 password?</a>
                         </div>
+                        <button className="bg-red-500" onClick={notify}>hehe</button>
                         <Link to="/">
                             <button type="submit" className="
       w-full
       px-6
       py-2.5
-      bg-blue-600
+      bg-lime-600
       text-white
       font-medium
       text-xs
@@ -71,16 +78,16 @@ const Login = () => {
       uppercase
       rounded
       shadow-md
-      hover:bg-blue-700 hover:shadow-lg
-      focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
-      active:bg-blue-800 active:shadow-lg
+      hover:chartreuse-blue-700 hover:shadow-lg
+      focus:bg-lime-500 focus:shadow-lg focus:outline-none focus:ring-0
+      active:bg-lime-800 active:shadow-lg
       transition
       duration-150
       ease-in-out">Sign in
                             </button>
                         </Link>
                         <p className="text-gray-800 mt-6 text-center">Not a member? <a href="#!"
-                            className="text-blue-600 hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out">Register</a>
+                            className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Register</a>
                         </p>
                     </form>
                 </div>
