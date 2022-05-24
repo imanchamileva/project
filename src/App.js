@@ -8,17 +8,26 @@ import Jobs from './components/Jobs';
 import Login from './components/Login';
 import About from './components/About';
 import JobOffers from "./components/JobOffers";
+import logo2 from "./assets/logo2.png";
+
 
 function App() {
   return (
 
+    
     <div className="App">
 
       <Router>
-        <nav className="w-full h-20 flex justify-end items-center mx-auto">
-          <Link className="pr-12 text-pink-700 text-lg" to="/">Home</Link>
-          <Link className="pr-12 text-pink-700 text-lg" to="/about">About</Link>
-          <Link className="pr-12 text-pink-700 text-lg" to="login">Login</Link>
+        <nav className="w-full h-20 flex justify-between items-center mx-auto mr-5">
+          <div className="w-60 h-45">
+            <img src={logo2} alt="" />
+          </div>
+          <div>
+            <Link className="pr-12 text-pink-700 text-lg" to="/">Home</Link>
+            <Link className="pr-12 text-pink-700 text-lg" to="/about">About</Link>
+            <Link className="pr-12 text-pink-700 text-lg" to="login">Login</Link>
+          </div>
+
         </nav>
         <Routes>
           <Route path="/" element={<SearchJob />} />
@@ -27,7 +36,6 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
       </Router>
-
       <Footer />
     </div>
   );

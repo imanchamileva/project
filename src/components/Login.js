@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
-const Login = () => {
+const Login = (props) => {
 
-    const notify = () => {
-        toast.success("You are successfully logged in, Iman!")
-    }
+    const data1 = {
+        from: "Link #1",
+        message: "Welcome, Iman !",
+    };
+
 
     return (
         <div className="h-screen flex py-14 items-center  justify-center bg-lime-100">
@@ -64,8 +64,8 @@ const Login = () => {
                                 className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Forgot
                                 password?</a>
                         </div>
-                            <Link to="/" onClick={notify}>
-                                <button type="submit" className="
+                        <Link to="/" state={data1}>
+                            <button type="submit" className="
       w-full
       px-6
       py-2.5
@@ -83,15 +83,15 @@ const Login = () => {
       transition
       duration-150
       ease-in-out">Sign in
-                                </button>
-                            </Link>
+                            </button>
+                        </Link>
                         <p className="text-gray-800 mt-6 text-center">Not a member? <a href="#!"
                             className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Register</a>
                         </p>
                     </form>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 

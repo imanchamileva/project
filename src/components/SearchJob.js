@@ -1,12 +1,13 @@
 import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import { useLocation, Link } from "react-router-dom";
 var data = require('../assets/data.json');
 
 
 
 
-function SearchJob() {
+function SearchJob(props) {
 
     // const [jobs, setJobs] = useState ([])
     const [text, setText] = useState('')
@@ -15,6 +16,8 @@ function SearchJob() {
     const [showResult, setShowResults] = useState('')
     const navigate = useNavigate();
 
+    const location = useLocation();
+    const state = location.state;
 
 
     //position
@@ -51,12 +54,14 @@ function SearchJob() {
 
     return (
 
-
-
         <div className="w-full h-screen flex flex-col  content-center  items-center bg-lime-100">
+            {state && (
+                <div className="text-pink-600 text-lg">
+                    <p>{state.message}</p>
+                </div>
+            )}
             <div className="w-2/4 h-screen flex justify-between  items-center  content-center ">
                 <div className="">
-
                     <input
 
                         placeholder="Job"
@@ -80,13 +85,12 @@ function SearchJob() {
 
                                 .slice(0, 10)
                                 .map((value, key) => (
-
-                                        <a href
-                                            className="dataItem cursor-pointer width-100% height-50px flex align-items-center text-color-black bg-white w-72 py-2 hover:bg-gray-50"
-                                            key={key}
-                                            onClick={() => onSearch(value.position)}>
-                                            <p>{value.position}</p>
-                                        </a>
+                                    <a href
+                                        className="dataItem cursor-pointer width-100% height-50px flex align-items-center text-color-black bg-white w-72 py-2 hover:bg-gray-50"
+                                        key={key}
+                                        onClick={() => onSearch(value.position)}>
+                                        <p>{value.position}</p>
+                                    </a>
 
                                 ))}
                         </div>
