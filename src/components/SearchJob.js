@@ -140,7 +140,7 @@ function SearchJob(props) {
             </div>
 
             <div className="w-full h-screen flex justify-center">
-                <button className="h-12 bg-pink-400 rounded hover:bg-pink-500 text-white" onClick={() => onClickButton()}>Find Your Dream Job or Your Worst Nightmare ♥</button>
+                <button className="h-12 bg-pink-400 rounded hover:bg-pink-500 text-white" onClick={() => onClickButton()}>Find Your Dream Job ♥</button>
             </div>
 
 
