@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { useLocation, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 var data = require('../assets/data.json');
 
 

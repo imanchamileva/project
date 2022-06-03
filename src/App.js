@@ -9,13 +9,21 @@ import Login from './components/Login';
 import About from './components/About';
 import JobOffers from "./components/JobOffers";
 import logo2 from "./assets/logo2.png";
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import Logout from './components/Logout'
+
 
 
 function App() {
+
+ 
+
   return (
 
-    
+
     <div className="App">
+
 
       <Router>
         <nav className="w-full h-20 flex justify-between items-center mx-auto mr-5">
@@ -34,6 +42,7 @@ function App() {
           <Route path="/jobs" element={<JobOffers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
       <Footer />

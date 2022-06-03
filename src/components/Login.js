@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { login } from '../components/features/loginSlice'
 
 const Login = (props) => {
 
@@ -9,15 +12,24 @@ const Login = (props) => {
         message: "Welcome, Iman !",
     };
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const dispatch = useDispatch()
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(login(username, password))
+    }
 
     return (
+
         <div className="h-screen flex py-14 items-center  justify-center bg-lime-100">
             <div className="flex flex-row justify-center items-center ">
                 <div className="p-6 rounded-lg shadow-lg bg-white max-w-sm flex flex-col items-center">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group mb-6">
-                            <label for="exampleInputEmail2" className="form-label inline-block mb-2 text-gray-700">Email address</label>
-                            <input type="email" className="form-control
+                            <label htmlFor="exampleInputEmail2" className="form-label inline-block mb-2 text-gray-700">Email address</label>
+                            <input type="email" value={username} onChange={(e) => setUsername(e.target.value)} className="form-control
     
         w-full
         px-3
@@ -34,7 +46,7 @@ const Login = (props) => {
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInputEmail2"
                                 aria-describedby="emailHelp" placeholder="Enter email" />
                         </div>
-                        <div class="form-group mb-6">
+                        <div className="form-group mb-6">
                             <label htmlFor="exampleInputPassword2" className="form-label inline-block mb-2 text-gray-700">Password</label>
                             <input type="password" className="form-control block
         w-full
@@ -56,6 +68,7 @@ const Login = (props) => {
                         <div className="flex justify-between items-center mb-6">
                             <div className="form-group form-check">
                                 <input type="checkbox"
+                                    value={password} onChange={(e) => setPassword(e.target.value)}
                                     className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer"
                                     id="exampleCheck2" />
                                 <label className="form-check-label inline-block text-gray-800" htmlFor="exampleCheck2">Remember me</label>
