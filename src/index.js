@@ -4,7 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
-import { store } from "./app/Store.js"
+import userReducer from './components/features/loginSlice';
+import {configureStore} from "@reduxjs/toolkit"
+
+const store = configureStore({
+  reducer: {
+    user: userReducer,
+  },
+})
 
 ReactDOM.render(
   <React.StrictMode>

@@ -17,7 +17,7 @@ function SearchJob(props) {
     const navigate = useNavigate();
 
     const location = useLocation();
-    const state = location.state;
+    // const state = location.state;
 
 
     //position
@@ -55,11 +55,11 @@ function SearchJob(props) {
     return (
 
         <div className="w-full h-screen flex flex-col  content-center  items-center bg-lime-100">
-            {state && (
+            {/* {state && (
                 <div className="text-pink-600 text-lg">
                     <p>{state.message}</p>
                 </div>
-            )}
+            )} */}
             <div className="w-2/4 h-screen flex justify-between  items-center  content-center ">
                 <div className="">
                     <input

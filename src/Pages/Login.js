@@ -1,24 +1,29 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react'
+//usedispatch to modify values of our states
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
-import { login } from '../components/features/loginSlice'
+//
+import { login, logout } from '../components/features/loginSlice'
+import { useNavigate } from 'react-router-dom';
 
 const Login = (props) => {
 
-    const data1 = {
-        from: "Link #1",
-        message: "Welcome, Iman !",
-    };
 
+    // const data1 = {
+    //     from: "Link #1",
+    //     message: "Welcome, Iman !",
+    // };
+
+    const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch()
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(login(username, password))
+        {dispatch(login({ name :username})) }
+        navigate('/')
     }
 
     return (
@@ -77,8 +82,8 @@ const Login = (props) => {
                                 className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Forgot
                                 password?</a>
                         </div>
-                        <Link to="/" state={data1}>
-                            <button type="submit" className="
+                        {/* <Link to="/" state={data1}> */}
+                        <button type="submit" className="
       w-full
       px-6
       py-2.5
@@ -96,8 +101,9 @@ const Login = (props) => {
       transition
       duration-150
       ease-in-out">Sign in
-                            </button>
-                        </Link>
+                        </button>
+                        {/* </Link> */}
+                        {/* <button onClick={dispatch(login({ name: "imiii" })) }>Logout</button> */}
                         <p className="text-gray-800 mt-6 text-center">Not a member? <a href="#!"
                             className="text-lime-600 hover:text-lime-700 focus:text-lime-700 transition duration-200 ease-in-out">Register</a>
                         </p>

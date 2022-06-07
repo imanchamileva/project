@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { logout } from "../components/features/loginSlice";
 import { useDispatch } from "react-redux";
 
 const Logout = () => {
@@ -9,7 +8,7 @@ const Logout = () => {
   const dispatch = useDispatch();
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(logout());
+    
   };
 
   return (
