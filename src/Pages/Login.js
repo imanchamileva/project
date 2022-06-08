@@ -18,7 +18,9 @@ const Login = (props) => {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const dispatch = useDispatch()
+    const [showMail, setShowMail] = useState('');
+    const dispatch = useDispatch();
+
 
     const handleSubmit = (e) => {
         e.preventDefault();

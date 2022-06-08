@@ -1,5 +1,4 @@
 import Footer from "./components/Footer";
-import Header from "./components/Header";
 // import SearchBar from "./components/SearchBar";
 import Data from './assets/data.json'
 import SearchJob from "./components/SearchJob";
@@ -12,21 +11,43 @@ import logo2 from "./assets/logo2.png";
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import Logout from './Pages/Logout'
-import Profile from './components/Profile'
+import { useState } from 'react'
+import { logout } from './components/features/loginSlice'
+import { useNavigate } from 'react-router-dom';
+
+
 
 function App() {
 
+
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value)
+  const [loggedIn, setLoggedIn] = useState('')
+
+
+  const handleSubmit = (e) => {
+
+    setLoggedIn('lala')
+    e.preventDefault();
+    { dispatch(logout({ name: '' })) }
+    <Link to='/' className="cursor-pointer"></Link>
+  }
+
 
   return (
 
 
     <div className="App">
 
+      <div className="pl-4">
+
+        {user.name}
+
+        ({loggedIn ? <button onClick={handleSubmit} className="bg-pink-500 text-white px-3 py-1 rounded cursor-pointer">Logout</button> : ''})
+      </div>
 
       <Router>
         <nav className="w-full h-20 flex justify-between items-center mx-auto mr-5">
-        {user.name}
           <div className="w-60 h-45">
             <img src={logo2} alt="" />
           </div>
@@ -43,8 +64,6 @@ function App() {
           <Route path="/jobs" element={<JobOffers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/profile" element={<Profile />} />
         </Routes>
       </Router>
       <Footer />

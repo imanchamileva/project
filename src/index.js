@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux"
 import userReducer from './components/features/loginSlice';
-import {configureStore} from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit"
+
 
 const store = configureStore({
   reducer: {
@@ -16,7 +17,7 @@ const store = configureStore({
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+        <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
