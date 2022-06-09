@@ -1,19 +1,15 @@
 import Footer from "./components/Footer";
 // import SearchBar from "./components/SearchBar";
-import Data from './assets/data.json'
 import SearchJob from "./components/SearchJob";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
-import Jobs from './components/Jobs';
 import Login from './Pages/Login';
 import About from './components/About';
 import JobOffers from "./components/JobOffers";
 import logo2 from "./assets/logo2.png";
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import Logout from './Pages/Logout'
-import { useState } from 'react'
-import { logout } from './components/features/loginSlice'
-import { useNavigate } from 'react-router-dom';
+import { logout, setUserName } from './components/features/loginSlice'
+
 
 
 
@@ -21,15 +17,18 @@ function App() {
 
 
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.value)
-  const [loggedIn, setLoggedIn] = useState('')
+  const isLogin = useSelector((state) => state.user.isLogin);
+  const userName = useSelector((state) => state.user.userName);
 
 
-  const handleSubmit = (e) => {
 
-    setLoggedIn('lala')
+  const logoutHandler = (e) => {
+
+
     e.preventDefault();
-    { dispatch(logout({ name: '' })) }
+    { dispatch(logout()) }
+    { dispatch(setUserName({ name: '' })) }
+    // { dispatch(buitton()) }
     <Link to='/' className="cursor-pointer"></Link>
   }
 
@@ -41,9 +40,9 @@ function App() {
 
       <div className="pl-4">
 
-        {user.name}
-
-        ({loggedIn ? <button onClick={handleSubmit} className="bg-pink-500 text-white px-3 py-1 rounded cursor-pointer">Logout</button> : ''})
+        {userName.name}
+        {isLogin ? (
+          <button onClick={logoutHandler} className="bg-pink-500 text-white px-3 py-1 rounded cursor-pointer">Logout</button>) : ''}
       </div>
 
       <Router>

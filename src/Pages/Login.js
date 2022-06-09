@@ -1,11 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useState } from 'react'
 //usedispatch to modify values of our states
 import { useDispatch } from 'react-redux'
 //
-import { login, logout } from '../components/features/loginSlice'
+import { login, logout, setUserName } from '../components/features/loginSlice'
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux'
+
 
 const Login = (props) => {
 
@@ -15,16 +16,18 @@ const Login = (props) => {
     //     message: "Welcome, Iman !",
     // };
 
+    const isLogin = useSelector((state) => state.user.isLogin);
+    const userName = useSelector((state) => state.user.userName);
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [showMail, setShowMail] = useState('');
     const dispatch = useDispatch();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        {dispatch(login({ name :username})) }
+        { dispatch(login()) }
+        { dispatch(setUserName({ name: username })) }
         navigate('/')
     }
 
