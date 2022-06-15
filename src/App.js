@@ -1,5 +1,4 @@
 import Footer from "./components/Footer";
-// import SearchBar from "./components/SearchBar";
 import SearchJob from "./components/SearchJob";
 import { BrowserRouter as Router, Link, Routes, Route } from "react-router-dom";
 import Login from './Pages/Login';
@@ -28,7 +27,6 @@ function App() {
     e.preventDefault();
     { dispatch(logout()) }
     { dispatch(setUserName({ name: '' })) }
-    // { dispatch(buitton()) }
     <Link to='/' className="cursor-pointer"></Link>
   }
 
@@ -42,7 +40,7 @@ function App() {
 
         {userName.name}
         {isLogin ? (
-          <button onClick={logoutHandler} className="bg-pink-500 text-white px-3 py-1 rounded cursor-pointer">Logout</button>) : ''}
+          <button onClick={logoutHandler} className="bg-pink-400 hover:bg-pink-500 text-white w-20 h-10  rounded ">Logout</button>) : ''}
       </div>
 
       <Router>
