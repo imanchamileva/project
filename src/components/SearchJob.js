@@ -2,11 +2,13 @@ import React from 'react';
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
-var data = require('../assets/data.json');
-var uniqueData = [...new Set(data)]
-console.log(uniqueData);
+let data = require('../assets/data.json');
 
+let uniqueLocation = [...new Map(data.map(elem => [elem.location,elem])).values()]
+console.log(uniqueLocation);
 
+let uniquePosition = [...new Map(data.map(elem => [elem.position,elem])).values()]
+console.log(uniquePosition);
 
 
 function SearchJob(props) {
@@ -78,7 +80,7 @@ function SearchJob(props) {
 
                     {filteredData !== 0 && (
                         <div className="dataResult absolute">
-                            {data.filter(value => {
+                            {uniquePosition.filter(value => {
                                 const searchTerm = text.toLowerCase()
                                 const position = value.position.toLowerCase()
                                 return searchTerm && position.includes(searchTerm) && position !== searchTerm
@@ -116,14 +118,14 @@ function SearchJob(props) {
 
                     <div className="dataResult absolute">
 
-                        {data.filter((value) => {
+                        {uniqueLocation.filter((value) => {
 
                             const searchTerm = proposition.toLowerCase()
                             const location = value.location.toLowerCase()
 
                             return searchTerm && location.includes(searchTerm) && location !== searchTerm
                         })
-                            .slice(0, 1)
+                            .slice(0, 10)
                             .map((value, key) => (
 
                                 <a href
