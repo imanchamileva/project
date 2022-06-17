@@ -49,15 +49,14 @@ function App() {
             <img src={logo2} alt="" />
           </div>
           <div>
-            <Link className="pr-12 text-pink-700 text-lg" to="/">Home</Link>
+            <Link className="pr-12 text-pink-700 text-lg" to="/project">Home</Link>
             <Link className="pr-12 text-pink-700 text-lg" to="/about">About</Link>
             <Link className="pr-12 text-pink-700 text-lg" to="login">Login</Link>
-            <Link className="pr-12 text-pink-700 text-lg" to="profile">Profile</Link>
           </div>
         </nav>
 
         <Routes>
-          <Route path="/" element={<SearchJob />} />
+          <Route path="/project" element={<SearchJob />} />
           <Route path="/jobs" element={<JobOffers />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
